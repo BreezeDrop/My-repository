@@ -1,0 +1,23 @@
+# 初始化设置：
+git config --global user.name "cheatsheet"
+git config --global user.email "cheatsheet@cheatsheet.wang"
+
+# 添加暂存区、提交本地仓库、提交远程仓库
+git add .
+git commit -m "说明"
+git push
+
+# 修改远程仓库url
+git remote set-url origin "地址"
+
+# 远程仓库同步
+git pull
+
+远程克隆
+git clone
+
+# 修改代理
+git config --globa l--unset http.proxy
+git config --global --unset https.proxy
+
+git config --global http.proxy http://127.0.0.1:7890
