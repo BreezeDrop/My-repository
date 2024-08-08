@@ -1,23 +1,21 @@
 import os
 from docx2pdf import convert
 
-def batch_convert_docx_to_pdf(input_folder, output_folder):
+def batch_convert_docx_to_pdf(docx_folder, pdf_folder):
     # 确保输出文件夹存在
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
+    if not os.path.exists(pdf_folder):
+        os.makedirs(pdf_folder)
     
-    # 获取所有的 .docx 文件路径
-    docx_files = [os.path.join(input_folder, f) for f in os.listdir(input_folder) if f.endswith('.docx')]
-    
-    # 转换每一个 .docx 文件为 .pdf
-    for docx_file in docx_files:
-        # 确定输出路径
-        output_file = os.path.join(output_folder, os.path.splitext(os.path.basename(docx_file))[0] + '.pdf')
-        # 调用docx2pdf进行转换
-        convert(docx_file, output_file)
-        print(f"Converted {docx_file} to {output_file}")
+    # 遍历docx文件夹中的所有文件
+    for filename in os.listdir(docx_folder):
+        if filename.endswith('.docx'):
+            docx_path = os.path.join(docx_folder, filename)
+            pdf_path = os.path.join(pdf_folder, filename.replace('.docx', '.pdf'))
+            convert(docx_path, pdf_path)
+            print(f"Converted {docx_path} to {pdf_path}")
 
-# 使用示例
-input_folder = "path/to/your/docx/files"
-output_folder = "path/to/save/pdf/files"
-batch_convert_docx_to_pdf(input_folder, output_folder)
+# 示例用法
+docx_folder = "path/to/your/docx_folder"  # 替换为你的docx文件夹路径
+pdf_folder = "path/to/your/pdf_folder"    # 替换为你的pdf文件夹路径
+
+batch_convert_docx_to_pdf(docx_folder, pdf_folder)
