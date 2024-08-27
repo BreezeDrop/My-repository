@@ -8,7 +8,7 @@ git commit -m "说明"
 git push
 
 # 修改远程仓库url
-git remote set-url origin "地址"
+git remote set-url origin "https://github.com/BreezeDrop/My-repository.git"
 
 # 远程仓库同步
 git pull
