@@ -9,6 +9,8 @@ git push
 
 # 修改远程仓库url
 git remote set-url origin "https://github.com/BreezeDrop/My-repository.git"
+git remote add origin "https://github.com/BreezeDrop/My-repository.git"
+
 
 # 远程仓库同步
 git pull
