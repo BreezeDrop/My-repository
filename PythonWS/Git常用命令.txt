@@ -17,7 +17,7 @@ git pull
 git clone
 
 # 修改代理
-git config --globa l--unset http.proxy
+git config --global--unset http.proxy
 git config --global --unset https.proxy
 
 git config --global http.proxy http://127.0.0.1:7890
